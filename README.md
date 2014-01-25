@@ -1,44 +1,48 @@
-Ansible 
+Ansible
 =======
 
 
 Directory Structure
 ===================
-<pre>
---- ansible-cfg			
---- files			
---- handlers			
---- inventory			
-------- hosts			
------------ group_vars			
------------ host_vars			
------------ localhost			
---- playbooks						
-------- add-ssh-key.yml
---- plugins
-------- action
-------- callback
-------- connection
-------- filter
-------- inventory
-------- library
-------- lookup
-------- vars
---- roles
-------- apt_sources
------------ defaults
---------------- main.yml
------------ handlers
---------------- main.yml
------------ meta
---------------- main.yml
------------ tasks
---------------- main.yml
------------ templates
---------------- sources-list.j2
------------ vars
---------------- main.yml
---- scripts
---- secrets
---- templates
-</pre>
+
+.
+├── ansible.cfg                 ==> Ansible Configuration File
+├── files                       ==> Directory to store generic/adhoc files
+├── handlers                    ==> Directory to be define generic/adhoc handler
+│   └── services.yml            ==> Example of a generic handler
+├── inventory                   ==> The inventory directory as defined in `ansible.cfg`
+│   └── hosts                   ==> The hosts directory containing the hosts definition
+│       ├── group_vars          ==> The groups level variable directory
+│       ├── host_vars           ==> The hosts level variable directory
+│       └── localhost           ==> A typical host definition 
+├── playbooks                   ==> Adhoc/one-time playbooks 
+│   ├── add-ssh-key.yml         ==> A typical example of a one-time/adhoc playbook
+├── plugins                     ==> Plugin directory as defined in `ansible.cfg`
+│   ├── action                  ==> `Action` Plugin Directory
+│   ├── callback                ==> `CallBack` Plugin Directory
+│   ├── connection              ==> `Connection` Plugin Directory
+│   ├── filter                  ==> `Filter` Plugin Directory
+│   ├── inventory               ==> `Inventory` Plugin Directory [not supported by core Ansible]
+│   ├── library                 ==> `Library` for extending Ansible Module Capability
+│   ├── lookup                  ==> `Lookup` Plugin Directory
+│   └── vars                    ==> `Vars` Plugin Directory
+├── README.md                   ==> This file
+├── roles                       ==> Organised reusable Playbooks
+│   └── apt_sources             ==> A Typical Role Playbooks
+│       ├── defaults            ==> Defaults definition
+│       │   └── main.yml
+│       ├── handlers            ==> Handlers for this role
+│       │   └── main.yml
+│       ├── meta                ==> Metadata for this role
+│       │   └── main.yml
+│       ├── README.md           ==> A Readme for this role
+│       ├── tasks               ==> Tasks for this role
+│       │   └── main.yml
+│       ├── templates           ==> Templates for this role
+│       │   └── sources.list.j2
+│       └── vars                ==> Variables sepecific to this role
+│           └── main.yml
+├── scripts                     ==> Adhoc scripts for bootstrapping, etc. May not be connected to Ansible
+├── secrets                     ==> Some secrets variable like pems
+└── templates                   ==> Generic Templates
+
