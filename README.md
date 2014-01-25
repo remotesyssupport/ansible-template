@@ -4,7 +4,7 @@ Ansible
 
 Directory Structure
 ===================
-
+<pre>
 .
 ├── ansible.cfg                 ==> Ansible Configuration File
 ├── files                       ==> Directory to store generic/adhoc files
@@ -45,4 +45,4 @@ Directory Structure
 ├── scripts                     ==> Adhoc scripts for bootstrapping, etc. May not be connected to Ansible
 ├── secrets                     ==> Some secrets variable like pems
 └── templates                   ==> Generic Templates
-
+</pre>
